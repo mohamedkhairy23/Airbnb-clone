@@ -16,7 +16,7 @@ interface InputProps {
 const Input = ({
   id,
   label,
-  type,
+  type = "text",
   disabled,
   formatPrice,
   required,
