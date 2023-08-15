@@ -1,19 +1,19 @@
 "use client";
 
-import {
-  AiFillHeart,
-  AiOutlineAccountBook,
-  AiOutlineHeart,
-} from "react-icons/ai";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { safeUser } from "../types";
+import useFavourite from "../hooks/useFavourite";
 
 interface HeartButtonProps {
-  listingId?: string;
+  listingId: string;
   currentUser?: safeUser | null;
 }
+
 const HeartButton = ({ listingId, currentUser }: HeartButtonProps) => {
-  const hasFavourited = false;
-  const toggleFavourite = () => {};
+  const { hasFavourited, toggleFavourite } = useFavourite({
+    listingId,
+    currentUser,
+  });
 
   return (
     <div
