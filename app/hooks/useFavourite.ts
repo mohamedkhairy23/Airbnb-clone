@@ -33,13 +33,14 @@ const useFavourite = ({ listingId, currentUser }: IUseFavourite) => {
 
         if (hasFavourited) {
           request = () => axios.delete(`/api/favourites/${listingId}`);
+          toast.success("Deleted from favourites");
         } else {
           request = () => axios.post(`/api/favourites/${listingId}`);
+          toast.success("Addedn to favourites");
         }
 
         await request();
         router.refresh();
-        toast.success("Success");
       } catch (error) {
         console.log(error);
 
