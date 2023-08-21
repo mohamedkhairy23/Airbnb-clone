@@ -1,5 +1,5 @@
 "use client";
-
+import axios from "axios";
 import Container from "@/app/components/Container";
 import { categories } from "@/app/components/Navbar/Categories";
 import ListingHead from "@/app/components/listings/ListingHead";
@@ -7,8 +7,6 @@ import ListingInfo from "@/app/components/listings/ListingInfo";
 import ListingReservation from "@/app/components/listings/ListingReservation";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { SafeReservation, safeListings, safeUser } from "@/app/types";
-import { Reservation } from "@prisma/client";
-import axios from "axios";
 import { differenceInDays, eachDayOfInterval } from "date-fns";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useState } from "react";
@@ -70,7 +68,7 @@ const ListingClient = ({
       .then(() => {
         toast.success("Reserved success");
         setDateRange(initialDateRange);
-        // Redirect to /trips
+        router.refresh();
         router.push("/trips");
       })
       .catch(() => {
@@ -79,15 +77,7 @@ const ListingClient = ({
       .finally(() => {
         setIsLoading(false);
       });
-  }, [
-    currentUser,
-    dateRange.endDate,
-    dateRange.startDate,
-    listing?.id,
-    loginModal,
-    router,
-    totalPrice,
-  ]);
+  }, [currentUser, dateRange, listing?.id, loginModal, router, totalPrice]);
 
   useEffect(() => {
     if (dateRange.startDate && dateRange.endDate) {
