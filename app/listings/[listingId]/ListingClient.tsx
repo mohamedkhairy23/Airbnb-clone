@@ -6,7 +6,7 @@ import ListingHead from "@/app/components/listings/ListingHead";
 import ListingInfo from "@/app/components/listings/ListingInfo";
 import ListingReservation from "@/app/components/listings/ListingReservation";
 import useLoginModal from "@/app/hooks/useLoginModal";
-import { safeListings, safeUser } from "@/app/types";
+import { SafeReservation, safeListings, safeUser } from "@/app/types";
 import { Reservation } from "@prisma/client";
 import axios from "axios";
 import { differenceInDays, eachDayOfInterval } from "date-fns";
@@ -22,7 +22,7 @@ const initialDateRange = {
 };
 
 interface ListingClientProps {
-  reservations?: Reservation[];
+  reservations?: SafeReservation[];
   listing: safeListings & {
     user: safeUser;
   };
@@ -30,9 +30,9 @@ interface ListingClientProps {
 }
 
 const ListingClient = ({
+  reservations = [],
   listing,
   currentUser,
-  reservations = [],
 }: ListingClientProps) => {
   const loginModal = useLoginModal();
   const router = useRouter();
@@ -71,7 +71,7 @@ const ListingClient = ({
         toast.success("Reserved success");
         setDateRange(initialDateRange);
         // Redirect to /trips
-        router.refresh();
+        router.push("/trips");
       })
       .catch(() => {
         toast.error("Something went wrong");
@@ -92,13 +92,14 @@ const ListingClient = ({
   useEffect(() => {
     if (dateRange.startDate && dateRange.endDate) {
       const dayCount = differenceInDays(dateRange.endDate, dateRange.startDate);
+
       if (dayCount && listing.price) {
         setTotalPrice(dayCount * listing.price);
       } else {
         setTotalPrice(listing.price);
       }
     }
-  }, [dateRange.endDate, dateRange.startDate, listing.price]);
+  }, [dateRange, listing.price]);
 
   const category = useMemo(() => {
     return categories.find((item) => item.label === listing.category);
