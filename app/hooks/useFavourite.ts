@@ -36,7 +36,7 @@ const useFavourite = ({ listingId, currentUser }: IUseFavourite) => {
           toast.success("Deleted from favourites");
         } else {
           request = () => axios.post(`/api/favourites/${listingId}`);
-          toast.success("Addedn to favourites");
+          toast.success("Added to favourites");
         }
 
         await request();
