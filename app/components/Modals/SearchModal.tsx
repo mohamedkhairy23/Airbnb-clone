@@ -24,9 +24,9 @@ const SearchModal = () => {
   const params = useSearchParams();
   const searchModal = useSearchModal();
 
-  const [location, setLocation] = useState<CountrySelectValue>();
   const [step, setStep] = useState(STEPS.LOCATION);
-  const [gusetCount, setGuestCount] = useState(1);
+  const [location, setLocation] = useState<CountrySelectValue>();
+  const [guestCount, setGuestCount] = useState(1);
   const [roomCount, setRoomCount] = useState(1);
   const [bathroomCount, setBathroomCount] = useState(1);
   const [dateRange, setDateRange] = useState<Range>({
@@ -65,7 +65,7 @@ const SearchModal = () => {
     const updatedQuery: any = {
       ...currentQuery,
       locationValue: location?.value,
-      gusetCount,
+      guestCount,
       roomCount,
       bathroomCount,
     };
@@ -93,7 +93,7 @@ const SearchModal = () => {
     bathroomCount,
     dateRange.endDate,
     dateRange.startDate,
-    gusetCount,
+    guestCount,
     location?.value,
     onNext,
     params,
@@ -155,7 +155,7 @@ const SearchModal = () => {
         <Counter
           title="Guests"
           subtitle="How many guests?"
-          value={gusetCount}
+          value={guestCount}
           onChange={(value) => setGuestCount(value)}
         />
         <Counter
