@@ -1,4 +1,4 @@
-Project Demo Link: https://airbnb-clone-abj2a3t1d-mohamedkhairy23.vercel.app/
+Project Demo Link: https://airbnb-clone-git-main-mohamedkhairy23.vercel.app/
 
 Project tools: [NextJS for client-side and server-side && Next-auth for authentication and authorization && Bcrypt for hashing password && Prisma and MongoDB && World-countries package for countries API && React-select package for selecting from countries options && Leaflet and react-leaflet packages for maps && React-date-range package for calendar && Zustand for simple state management && tailwind for styling]
 
