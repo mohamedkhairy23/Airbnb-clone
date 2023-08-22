@@ -42,8 +42,5 @@
     "typescript": "5.1.6",
     "world-countries": "^4.0.0",
     "zustand": "^4.4.1"
-  },
-  "devDependencies": {
-    "prisma": "^5.2.0"
   }
 }
