@@ -59,11 +59,11 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
               <>
+                <Link href="/">
+                  <MenuItem onClick={() => {}} label="Home Page" />
+                </Link>
                 <Link href="/trips">
-                  <MenuItem
-                    onClick={() => router.push("/trips")}
-                    label="My trips"
-                  />
+                  <MenuItem onClick={() => {}} label="My trips" />
                 </Link>
                 <Link href="/favourites">
                   <MenuItem onClick={() => {}} label="My favourites" />
