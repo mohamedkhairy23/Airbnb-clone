@@ -1,8 +1,17 @@
-Project Demo Link: https://airbnb-clone-759h46lcr-mohamedkhairy23.vercel.app/
+## Project Demo Link: https://airbnb-clone-759h46lcr-mohamedkhairy23.vercel.app/
 
-Project tools: [NextJS for client-side and server-side && Next-auth for authentication and authorization && Bcrypt for hashing password && Prisma and MongoDB && World-countries package for countries API && React-select package for selecting from countries options && Leaflet and react-leaflet packages for maps && React-date-range package for calendar && Zustand for simple state management && tailwind for styling]
+## Project tools: 
+- NextJS
+- Next-auth for authentication and authorization
+- Bcrypt for hashing password
+- Prisma and MongoDB
+- World-countries package for using countries API.
+- React-select package for selecting from countries options
+- Leaflet and react-leaflet packages for maps and geocoding
+- React-date-range package for calendar
+- Zustand for simple state management
+- TailwindCSS for styling
 
-Project Features: [Modals for login and register && Modal with steps for renting process steps(Selecting place category- Selecting country with dropdown options and maps - Number of guests, rooms, and bathrooms - Adding a photo of your place - Place title and describe - Price per night). && Reservation system with selecting date range by the calendar, submit reservations, cancel reservations, and cancel guest reservations && Pages for (Home - Listing detail - My trips - My favorites - My reservations - My properties). && Search modal with steps.]
 ![1](https://github.com/mohamedkhairy23/Airbnb-clone/assets/82667987/e09c068c-395c-445f-a7c3-dfbd12517360)
 ![2](https://github.com/mohamedkhairy23/Airbnb-clone/assets/82667987/274b7aa1-b2cc-42e9-a986-f9cc3c088507)
 ![3](https://github.com/mohamedkhairy23/Airbnb-clone/assets/82667987/229e5fdd-948d-4a79-898b-0be06788a502)
